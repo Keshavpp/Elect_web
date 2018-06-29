@@ -13,7 +13,20 @@ def login():
 		if result:
 			for i in result:
 				print("WELCOME "+i[1])
-			break
+
+			if username=="premshanker":
+				menu=('''
+					1-View all accounts
+					2-exit
+					''')
+				choice=input(menu)
+				if choice=='1':
+					cursor.execute("SELECT * FROM user")
+					print(cursor.fetchall())	
+				elif choice=='2':
+					sys,exit()
+			else:
+				break
 		else:
 			print("Incorret usernamea or password ")
 			again=input("DO you wanna try again(Y/N)?")
