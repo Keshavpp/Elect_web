@@ -2,6 +2,12 @@
 <html>
 <head>
 <title>Election Details of India</title>
+  <style>
+            #img-load {
+                position: fixed;
+            }
+            
+        </style>
 </head>
 <body>
 
@@ -9,6 +15,42 @@
 <p>Nice to have u :)</p>
 
   <p> Modi Modi Modi</p>
+
+
+
+<svg bgcolor="wheat" width="500px" height="100px" id="img-load" >
+            <style>
+                
+                .rr { font: italic 60px serif; fill: red; }
+            </style>
+            <text x="0" y="50" class="rr">Vikash Kashayp</text>
+        </svg>
+        <script type="text/javascript">
+            var img = document.getElementById("img-load");
+            var imgVelocity = {x: 0.6, y: 0.6};
+            var imgPos = {x: 0, y: 0};
+            // These two variables are the size f your logo
+            var elWidth = 300;
+            var elHeight = 00;
+            window.setInterval(function() {
+                imgPos.x += imgVelocity.x ;
+                imgPos.y += imgVelocity.y ;
+                img.style.top = imgPos.y + "px";
+                img.style.left = imgPos.x + "px";
+                if (imgPos.x > document.documentElement.clientWidth - elWidth) {
+                    imgVelocity.x = -1;
+                } else if (imgPos.x < 0) {
+                    imgVelocity.x = 1;
+                }
+                if (imgPos.y > document.documentElement.clientHeight - elHeight) {
+                    imgVelocity.y = -1;
+                } else if (imgPos.y < 0){
+                    imgVelocity.y = 1;
+                };
+            }, 1);
+        </script>
+        
+        
   <audio autoplay>
 <iframe src="Final_Election_Vote_Du.mp3" allow="autoplay">
 </audio>
